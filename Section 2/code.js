@@ -26,3 +26,5 @@ let greeting = (namee) => namee;
 // console.log(greeting('lilo'));
 
 export default greeting;
+
+console.log('try git');

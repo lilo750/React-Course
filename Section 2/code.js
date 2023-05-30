@@ -1,5 +1,4 @@
 export const firstName = 'khaled';
-console.log(firstName);
 
 /*
 here is an Error cuse i try to reasign a constant value and constant values is just for strict data that will not changed otherwise let or var
@@ -25,6 +24,6 @@ console.log(ok('khaled'));
 let greeting = (namee) => namee;
 // console.log(greeting('lilo'));
 
-export default greeting;
+// export default greeting;
 
 console.log('try git');

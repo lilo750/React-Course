@@ -1,7 +1,7 @@
-import greeting, { firstName } from './code.js';
+import { firstName } from './code.js';
 
-// console.log(firstName);
-console.log(greeting('lilo'));
+console.log(firstName);
+// console.log(greeting('lilo'));
 
 // this is another syntax for defining an object by "new" keyword
 const obj = new Object({

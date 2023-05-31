@@ -1,7 +1,7 @@
 import { firstName, greeting as greetFun } from './code.js';
 
-console.log(firstName);
-console.log(greetFun('lilo'));
+// console.log(firstName);
+// console.log(greetFun('lilo'));
 
 // this is another syntax for defining an object by "new" keyword
 const obj = new Object({
@@ -45,9 +45,20 @@ let preson3 = new state('mohsen', 26, 31000);
 // console.log(preson1 instanceof constructor);
 // console.log(preson1 instanceof state);
 
-console.log(preson1.name, preson1.age, preson1.age);
-console.log(preson2.name, preson2.age, preson2.age);
-console.log(preson3.name, preson1.age, preson1.age);
+// console.log(preson1.name, preson1.age, preson1.age);
+// console.log(preson2.name, preson2.age, preson2.age);
+// console.log(preson3.name, preson1.age, preson1.age);
 
-console.log(preson1.messegeMethod());
-console.log(preson1.msg());
+// console.log(preson1.messegeMethod());
+// console.log(preson1.msg());
+
+let num1 = 10;
+let num2 = new Number(10);
+
+// console.log(typeof num1, typeof num2);
+
+// console.log(num1 instanceof Number);
+// console.log(num2 instanceof Number);
+
+// console.log(num1.constructor === Number);
+// console.log(num2.constructor === Number);

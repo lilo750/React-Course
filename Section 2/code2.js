@@ -36,6 +36,10 @@ class state {
 	messegeMethod() {
 		return `person name is ${this.name} and his age is ${this.age} and his salary is ${this.salary}`;
 	}
+
+	updateName(name) {
+		this.name = name;
+	}
 }
 
 let preson1 = new state('Khaled', 20, 20000);
@@ -62,3 +66,43 @@ let num2 = new Number(10);
 
 // console.log(num1.constructor === Number);
 // console.log(num2.constructor === Number);
+
+// console.log(preson1.name);
+// preson1.updateName('Hassan');
+// console.log(preson1.name); //name updated it will print Hassan
+
+// count idea with every object will created + static keyword to make my propery or method belongs to the class not the object + some trials to check what happening + all this with new class i will test on it
+
+class car {
+	// now count belongs to class
+	static count = 0;
+	constructor(type, color, model, price) {
+		this.type = type;
+		this.color = color;
+		this.model = model;
+		this.price = price;
+		car.count++;
+	}
+
+	// belongs to class not object constrcutor
+	static updateCarPrice() {
+		// add 51000 on each car cuse everything todays is expensive;
+		this.price += 51000;
+	}
+}
+
+let car1 = new car('bmw', 'black', 'M8 2023', 2000000);
+let car2 = new car('marcedes', 'black', 'benz 2023', 1500000);
+let car3 = new car('borsh', 'white-sky', '2022', 6000000);
+
+// console.log(car.count);
+// console.log(car1.model);
+// console.log(car2.type);
+// console.log(car1.price);
+
+//there is an error in this method (i think it's logical error)
+car.updateCarPrice();
+
+console.log(car1.price);
+console.log(car2.price);
+console.log(car3.price);

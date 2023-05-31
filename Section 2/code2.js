@@ -164,3 +164,22 @@ const sumFunc = (...nums) => {
 
 const funResult = sumFunc(5, 4, 3, 2);
 console.log(funResult);
+
+// premitive and refrences values
+const list = ['khaled', 'hello', 'okey'];
+const copiedList = list;
+list[1] = 'mohammed';
+console.log(copiedList[1]); // will output mohamed not hello cuse arrays and objects are refrence values (pointers to value not the value itself)
+
+const objList = {
+	name: 'hamdy',
+};
+
+const copiedObjList = objList;
+objList.name = 'khaled';
+console.log(copiedObjList); //will output khaled
+
+// if i like to save the value and a copy as primitive not refrence then i should use spreed operator
+const copiedObjListV2 = { ...objList };
+objList.name = 'mahmoud';
+console.log(copiedObjListV2);

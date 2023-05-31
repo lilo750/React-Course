@@ -73,10 +73,11 @@ let num2 = new Number(10);
 
 // count idea with every object will created + static keyword to make my propery or method belongs to the class not the object + some trials to check what happening + all this with new class i will test on it
 
-class car {
+class car extends state {
 	// now count belongs to class
 	static count = 0;
-	constructor(type, color, model, price) {
+	constructor(name, age, type, color, model, price) {
+		super(name, age); //now i call name and age properties from the state class by inheritance
 		this.type = type;
 		this.color = color;
 		this.model = model;
@@ -91,9 +92,9 @@ class car {
 	}
 }
 
-let car1 = new car('bmw', 'black', 'M8 2023', 2000000);
-let car2 = new car('marcedes', 'black', 'benz 2023', 1500000);
-let car3 = new car('borsh', 'white-sky', '2022', 6000000);
+let car1 = new car('khaled', 20, 'bmw', 'black', 'M8 2023', 2000000);
+let car2 = new car('Ali', 20, 'marcedes', 'black', 'benz 2023', 1500000);
+let car3 = new car('khaled', 20, 'borsh', 'white-sky', '2022', 6000000);
 
 // console.log(car.count);
 // console.log(car1.model);
@@ -103,6 +104,63 @@ let car3 = new car('borsh', 'white-sky', '2022', 6000000);
 //there is an error in this method (i think it's logical error)
 car.updateCarPrice();
 
-console.log(car1.price);
-console.log(car2.price);
-console.log(car3.price);
+// console.log(car1.price);
+// console.log(car2.price);
+// console.log(car3.price);
+
+console.log(car1.name);
+
+// the example that max give in lecture:
+
+// i don't know what is the problem with this code actully
+class Man {
+	Constructor() {
+		this.namee = 'khaled';
+	}
+
+	sayHello() {
+		return `hello ${this.namee}`;
+	}
+}
+
+let man1 = new Man();
+console.log(man1.sayHello());
+
+// spreed operator (pull out) (copying) and rest operator (function arguments)
+
+// spreed operator
+
+// example 1
+const myarr = [1, 2, 3, 4, 5];
+const copiedArr = [...myarr, 6, 7];
+
+for (let index in copiedArr) {
+	console.log(copiedArr[index]);
+}
+
+//example 2
+const myObj = {
+	name: 'lilo',
+	address: 'almatarya',
+};
+
+const myCopiedObj = {
+	...myObj,
+	phone: '01026163028',
+};
+
+console.log(myCopiedObj);
+
+// Rest operator (enter any amout of argument into an array then excute anything on this array inside your function)
+let sum = 0;
+
+const sumFunc = (...nums) => {
+	nums.forEach((el, index, arr) => {
+		sum += el;
+	});
+
+	return sum;
+};
+
+const funResult = sumFunc(5, 4, 3, 2);
+console.log(funResult);

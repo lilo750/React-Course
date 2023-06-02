@@ -108,13 +108,13 @@ car.updateCarPrice();
 // console.log(car2.price);
 // console.log(car3.price);
 
-console.log(car1.name);
+// console.log(car1.name);
 
 // the example that max give in lecture:
 
 // i don't know what is the problem with this code actully
 class Man {
-	Constructor() {
+	constructor() {
 		this.namee = 'khaled';
 	}
 
@@ -134,9 +134,11 @@ console.log(man1.sayHello());
 const myarr = [1, 2, 3, 4, 5];
 const copiedArr = [...myarr, 6, 7];
 
+/*
 for (let index in copiedArr) {
 	console.log(copiedArr[index]);
 }
+ */
 
 //example 2
 const myObj = {
@@ -149,7 +151,7 @@ const myCopiedObj = {
 	phone: '01026163028',
 };
 
-console.log(myCopiedObj);
+// console.log(myCopiedObj);
 
 // Rest operator (enter any amout of argument into an array then excute anything on this array inside your function)
 let sum = 0;
@@ -163,13 +165,13 @@ const sumFunc = (...nums) => {
 };
 
 const funResult = sumFunc(5, 4, 3, 2);
-console.log(funResult);
+// console.log(funResult);
 
 // premitive and refrences values
 const list = ['khaled', 'hello', 'okey'];
 const copiedList = list;
 list[1] = 'mohammed';
-console.log(copiedList[1]); // will output mohamed not hello cuse arrays and objects are refrence values (pointers to value not the value itself)
+// console.log(copiedList[1]); // will output mohamed not hello cuse arrays and objects are refrence values (pointers to value not the value itself)
 
 const objList = {
 	name: 'hamdy',
@@ -177,9 +179,52 @@ const objList = {
 
 const copiedObjList = objList;
 objList.name = 'khaled';
-console.log(copiedObjList); //will output khaled
+// console.log(copiedObjList); //will output khaled
 
 // if i like to save the value and a copy as primitive not refrence then i should use spreed operator
 const copiedObjListV2 = { ...objList };
 objList.name = 'mahmoud';
-console.log(copiedObjListV2);
+// console.log(copiedObjListV2);
+
+const destArr = ['khaled', 'ahmed', 'samir'];
+const [name1, , name3] = destArr; // destructing by position
+// console.log(name1);
+// console.log(name3);
+
+const destObj = {
+	name: 'lilo',
+	age: 20,
+};
+
+const { name, age } = destObj;
+// console.log(name);
+// console.log(age);
+
+const destObj2 = {
+	name: 'Khaled',
+	address: {
+		city: 'cairo',
+		street: 'alkblat street',
+	},
+};
+
+const {
+	address: { city },
+	address: { street },
+} = destObj2;
+
+// console.log(city);
+// console.log(street);
+
+// combing destObj and destObj2 in one obj and replace the repeated property with last obj property (in this case objDest2)
+
+const cominedObj = { ...destObj, ...destObj2 };
+// console.log(cominedObj);
+
+const sumAndMultiply = (a, b) => {
+	return [a + b, a * b];
+};
+
+const [summ, multiplyy] = sumAndMultiply(5, 4);
+console.log(summ);
+console.log(multiplyy);

@@ -1,9 +1,6 @@
 .App {
 	text-align: center;
 	height: 100vh;
-	display: flex;
-	justify-content: center;
-	align-items: center;
 }
 
 .App-logo {
@@ -39,9 +36,4 @@
 	to {
 		transform: rotate(360deg);
 	}
-}
-
-.expense--component {
-	width: 40rem;
-	background-color: #61dafb;
 }

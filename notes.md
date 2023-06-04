@@ -23,7 +23,7 @@
 
 > react is all about spiliting your applaction into small components or small blocks where every component have a clear task therefore code stays maintainable and manageable.
 
-> React gives us a higher level syntax where we write code in a declarative way , declarative components and focused approch
+> React gives us a higher level syntax where we write code in a declarative way **==(declarative approach)==** , declarative components and focused approch
 > so we just define what is end goal we wanna see on the screen by creating custom html elements and react will do the rest.
 
 > -we can use React to control parts of an HTML page or all html page.
@@ -49,3 +49,30 @@
 > ### Js modules import and export :
 >
 > ![modules](https://samanthaming.gumlet.io/tidbits/79-module-cheatsheet.jpg.gz?format=auto)
+
+> **_Classes are blueprints for objects_**
+
+>
+
+---
+
+## Section 3 (React basics and component)
+
+> A component is a piece of the UI (user interface) that has its own logic and appearance. A component can be as small as a button, or as large as an entire page.
+
+> React components are JavaScript functions that return markup
+
+> React component names must always start with a capital letter, while HTML tags must be lowercase.
+
+> ==**JSX**== :
+> JSX is not HTML, but a syntax extension to JavaScript used in ReactJS to easily write HTML and JavaScript together, also it's allows writing JavaScript that looks similar to HTML,
+
+> JSX is used to create HTML elements as a JavaScript code that will be placed inside the DOM without using createElement() or appendChild() methods
+
+> In React, ==**state**== refers to the data that is stored and managed within a component. State can be used to track user input, store the selected image index, and more
+
+> The ==**useState**== Hook is used to add state to function components
+
+> ==**Hooks**== are functions that live inside React’s functional components, that enable you to more easily “grab” and work with state, as well as the various React lifecycle events. Note that these can only live in functional components and are meant to replace the need for classes. They cannot live in standard JavaScript functions, except in the case of making your own custom hook.
+
+> Hooks are a conciser and more straightforward way to organize code and manage state, making them a wonderful addition to your React toolbelt!

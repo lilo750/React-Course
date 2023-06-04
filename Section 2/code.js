@@ -21,9 +21,9 @@ console.log(ok('khaled'));
 
 // another way of defining a function via arrow function
 
-let greeting = (namee) => namee;
+export let greeting = (namee) => namee;
 // console.log(greeting('lilo'));
 
 // export default greeting;
 
-console.log('try git');
+// console.log('try git');

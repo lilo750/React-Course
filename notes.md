@@ -76,3 +76,12 @@
 > ==**Hooks**== are functions that live inside React’s functional components, that enable you to more easily “grab” and work with state, as well as the various React lifecycle events. Note that these can only live in functional components and are meant to replace the need for classes. They cannot live in standard JavaScript functions, except in the case of making your own custom hook.
 
 > Hooks are a conciser and more straightforward way to organize code and manage state, making them a wonderful addition to your React toolbelt!
+
+> In React, a ==**composition**== refers to the practice of combining multiple smaller components together to build larger and more complex user interfaces. It allows you to break down your UI into reusable and independent parts, making it easier to manage and maintain your codebase.
+
+> In React, ==**props**== (short for "properties") are used to pass data from a parent component to its child component. Props are read-only and cannot be modified by the child component. This concept allows for the composition of reusable and modular components.
+
+> ==`props.children`== the value of it will always be the content between the opening and closing tag for this component we put it inside the chilcomponentd that we want to put content between it's opening and closing tag and this component called (==wrapper component==)
+
+> jsx is a syntax suger cuse under the hood the jsx code transformed to a methods that called in react object in the import file
+> `import React from 'react'`

@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import ExpenseCalls from './components/ExpenseCalls';
+import ExpenseCalls from './components/expenses/ExpenseCalls';
 
 function App() {
 	const expenses = [

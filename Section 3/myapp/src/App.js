@@ -25,9 +25,19 @@ function App() {
 		},
 	];
 
+	//this how my jsx code transformed by react
+	/*
+	return React.createElement(
+		'div',
+		{},
+		React.createElement('h2', { className: 'lilo' }, "Let's get started"),
+		React.createElement(ExpenseCalls, { expenses: expenses })
+	);
+	*/
+
 	return (
 		<div>
-			<h2>Let's get started</h2>
+			<h2 className='lilo'>Let's get started</h2>
 			<ExpenseCalls expenses={expenses}></ExpenseCalls>
 		</div>
 	);

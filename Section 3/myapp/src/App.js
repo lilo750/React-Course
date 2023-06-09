@@ -1,3 +1,4 @@
+import React from 'react';
 import './App.css';
 import ExpenseCalls from './components/ExpenseCalls';
 
@@ -24,7 +25,12 @@ function App() {
 		},
 	];
 
-	return <ExpenseCalls expenses={expenses}></ExpenseCalls>;
+	return (
+		<div>
+			<h2>Let's get started</h2>
+			<ExpenseCalls expenses={expenses}></ExpenseCalls>
+		</div>
+	);
 }
 
 export default App;

@@ -2,24 +2,44 @@ import React, { useState } from 'react';
 import './ExpenseForm.css';
 
 function ExpenseForm() {
-	// now we make a state for every input
+	// now we make a state for every input (this called indvitaul state)
+	/*
 	const [enteredTitle, setInteredTitle] = useState('');
 	const [enteredAmount, setInteredAmount] = useState('');
 	const [enteredDate, setInteredDate] = useState('');
+  */
+
+	const [interedInput, setInteredInput] = useState({
+		enteredTitle: '',
+		enteredAmount: '',
+		enteredDate: '',
+	});
 
 	function saveTitleHandler(event) {
 		// console.log('changed!');
 		// console.log(event.target.value);
+		// setInteredTitle(event.target.value);
 
-		setInteredTitle(event.target.value);
+		setInteredInput({
+			...interedInput,
+			enteredTitle: event.target.value,
+		});
 	}
 
 	function saveAmountHandler(event) {
-		setInteredAmount(event.target.value);
+		// setInteredAmount(event.target.value);
+		setInteredInput({
+			...interedInput,
+			enteredAmount: event.target.value,
+		});
 	}
 
 	function saveDateHandler(event) {
-		setInteredDate(event.target.value);
+		// setInteredDate(event.target.value);
+		setInteredInput({
+			...interedInput,
+			enteredDate: event.target.value,
+		});
 	}
 
 	return (

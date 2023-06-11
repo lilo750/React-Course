@@ -60,12 +60,31 @@ function ExpenseForm() {
      */
 	}
 
+	function submitHandler(event) {
+		// stop the defult browser behvoir that the page reload after submit
+		event.preventDefault();
+
+		//save the inputed data in an object and log it
+		const enteredData = {
+			title: enteredTitle,
+			cost: enteredAmount,
+			date: new Date(enteredDate),
+		};
+
+		console.log(enteredData);
+
+		// clear the input fields after submit done and collected data in an object
+		setInteredTitle('');
+		setInteredAmount('');
+		setInteredDate('');
+	}
+
 	return (
-		<form>
+		<form onSubmit={submitHandler}>
 			<div className='new-expense__controls'>
 				<div className='new-expense__control'>
 					<label>Title</label>
-					<input type='text' onChange={saveTitleHandler} />
+					<input type='text' onChange={saveTitleHandler} value={enteredTitle} />
 				</div>
 				<div className='new-expense__control'>
 					<label>Amount</label>
@@ -74,6 +93,7 @@ function ExpenseForm() {
 						min='0.01'
 						step='0.01'
 						onChange={saveAmountHandler}
+						value={enteredAmount}
 					/>
 				</div>
 				<div className='new-expense__control'>
@@ -83,6 +103,7 @@ function ExpenseForm() {
 						min='2018-01-01'
 						max='2023-10-06'
 						onChange={saveDateHandler}
+						value={enteredDate}
 					/>
 				</div>
 				<div className='new-expense__actions'>

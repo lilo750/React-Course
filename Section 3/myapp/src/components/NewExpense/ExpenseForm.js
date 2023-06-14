@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './ExpenseForm.css';
 
-function ExpenseForm() {
+function ExpenseForm(props) {
 	// now we make a state for every input (this called indvitaul state)
 
 	const [enteredTitle, setInteredTitle] = useState('');
@@ -71,7 +71,8 @@ function ExpenseForm() {
 			date: new Date(enteredDate),
 		};
 
-		console.log(enteredData);
+		//now i call the function prop that move up my enteredData to parent component that is newExpense
+		props.onSaveFormData(enteredData);
 
 		// clear the input fields after submit done and collected data in an object
 		setInteredTitle('');

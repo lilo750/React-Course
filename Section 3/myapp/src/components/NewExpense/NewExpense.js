@@ -9,7 +9,8 @@ function NewExpense(props) {
 			...formDataObj,
 		};
 
-		console.log(formData);
+		props.onReceivedFormData(formData);
+		// console.log(formData);
 	}
 
 	return (

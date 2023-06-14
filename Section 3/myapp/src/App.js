@@ -2,8 +2,9 @@ import React from 'react';
 import './App.css';
 import ExpenseCalls from './components/expenses/ExpenseCalls';
 import NewExpense from './components/NewExpense/NewExpense';
+import data from './components/NewExpense/ExpenseForm';
 
-function App() {
+function App(props) {
 	const expenses = [
 		{
 			id: 'e1',
@@ -24,6 +25,12 @@ function App() {
 			amount: 450,
 			date: new Date(2021, 5, 12),
 		},
+		{
+			id: Math.round(Math.random()),
+			title: data.title,
+			cost: data.cost,
+			date: data.date,
+		},
 	];
 
 	//this how my jsx code transformed by react
@@ -36,9 +43,17 @@ function App() {
 	);
 	*/
 
+	function reciveFormDataHandler(formData) {
+		const myFormData = {
+			...formData,
+		};
+
+		console.log(myFormData);
+	}
+
 	return (
 		<div>
-			<NewExpense />
+			<NewExpense onReceivedFormData={reciveFormDataHandler} />
 			<ExpenseCalls expenses={expenses}></ExpenseCalls>
 		</div>
 	);

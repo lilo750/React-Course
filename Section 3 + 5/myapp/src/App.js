@@ -25,12 +25,6 @@ function App(props) {
 			amount: 450,
 			date: new Date(2021, 5, 12),
 		},
-		{
-			id: Math.round(Math.random()),
-			title: data.title,
-			cost: data.cost,
-			date: data.date,
-		},
 	];
 
 	//this how my jsx code transformed by react

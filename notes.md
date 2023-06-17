@@ -69,6 +69,46 @@
 
 > JSX is used to create HTML elements as a JavaScript code that will be placed inside the DOM without using createElement() or appendChild() methods
 
+> In React, a ==**composition**== refers to the practice of combining multiple smaller components together to build larger and more complex user interfaces. It allows you to break down your UI into reusable and independent parts, making it easier to manage and maintain your codebase.
+
+> In React, ==**props**== (short for "properties") are used to pass data from a parent component to its child component. Props are read-only and cannot be modified by the child component. This concept allows for the composition of reusable and modular components.
+
+> ==`props.children`== the value of it will always be the content between the opening and closing tag for this component we put it inside the chilcomponentd that we want to put content between it's opening and closing tag and this component called (==wrapper component==)
+> look to the code below to understand
+
+```js
+function Component(props) {
+	return <div>{props.children}</div>;
+}
+```
+
+> jsx is a syntax suger cuse under the hood the jsx code transformed to a methods that called in react object in the import file
+> `import React from 'react'`
+
+**another way to write react code rather than jsx (our jsx transformed to this way) :**
+
+```js
+return React.createElement(
+	'div',
+	{},
+	React.createElement('h2', { className: 'lilo' }, "Let's get started"),
+	React.createElement(ExpenseCalls, { expenses: expenses })
+);
+```
+
+this code was originally jsx code like this:
+
+```js
+return (
+	<div>
+		<h2 className='lilo'>Let's get started</h2>
+		<ExpenseCalls expenses={expenses}></ExpenseCalls>
+	</div>
+);
+```
+
+## Section 4
+
 > In React, ==**state**== refers to the data that is stored and managed within a component. State can be used to track user input, store the selected image index, and more
 
 > The ==**useState**== Hook is used to add state to function components
@@ -77,11 +117,24 @@
 
 > Hooks are a conciser and more straightforward way to organize code and manage state, making them a wonderful addition to your React toolbelt!
 
-> In React, a ==**composition**== refers to the practice of combining multiple smaller components together to build larger and more complex user interfaces. It allows you to break down your UI into reusable and independent parts, making it easier to manage and maintain your codebase.
+> it's a name conveniton that we name our function that respond to an event with `clickHandler` or like that
+> ex: `function clickHandler() {block of code}`
 
-> In React, ==**props**== (short for "properties") are used to pass data from a parent component to its child component. Props are read-only and cannot be modified by the child component. This concept allows for the composition of reusable and modular components.
+> React parses all the project code 1 time
+> when i use the useState hook react reparse this component again and compare the component with the state with prevous code state and change what should changed without rerender or reload the page. ==**this how state works in react and how react works**==
 
-> ==`props.children`== the value of it will always be the content between the opening and closing tag for this component we put it inside the chilcomponentd that we want to put content between it's opening and closing tag and this component called (==wrapper component==)
+> react don't care more about the varibles in my component and will not change anything in the document even the data changed that's behvior bacasue the prevous reason which is ==**react parse and render the code only once**== and for this reason we use the hooks in our code to make it dynamic
 
-> jsx is a syntax suger cuse under the hood the jsx code transformed to a methods that called in react object in the import file
-> `import React from 'react'`
+> `useState` ==**React hook**== let me add a state to my component
+> `useState` also return an array from 2 element first is the initialState that i already set it in the beginning when i created the state and second element is a function that recive the value i want to set
+> so this is the way how we create a `useState` by destrcturing
+> `const [state, setState] = useState(initialState)`
+
+> to use `useState` i should call it in my top level component
+> `import {useState} from 'react'`
+
+> **important** The `setState` function only updates the state variable for the next render. If you read the state variable after calling the set function, you will still get the old value that was on the screen before your call.
+
+> `useState` is a per component intance basis that's means that we have spearte state even we create component more than one
+
+> ==**two-way binding**== is the synchronization of data between a component's state and its UI elements. This is achieved by using a controlled component (the component that use two way binding), which renders a form element whose value is controlled by React. The value of the form element is set to the state value, and an onChange event handler updates the state value when the user interacts with the element.

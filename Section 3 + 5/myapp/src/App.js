@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import ExpenseCalls from './components/expenses/ExpenseCalls';
+import ExpensesCalls from './components/expenses/ExpenseCalls';
 import NewExpense from './components/NewExpense/NewExpense';
 import data from './components/NewExpense/ExpenseForm';
 
@@ -48,7 +48,7 @@ function App(props) {
 	return (
 		<div>
 			<NewExpense onReceivedFormData={reciveFormDataHandler} />
-			<ExpenseCalls expenses={expenses}></ExpenseCalls>
+			<ExpensesCalls expenses={expenses}></ExpensesCalls>
 		</div>
 	);
 }

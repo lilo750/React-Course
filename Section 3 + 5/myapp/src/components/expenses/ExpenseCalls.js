@@ -4,7 +4,7 @@ import './ExpenseCalls.css';
 import Card from '../UI/Card';
 import ExpensesFilter from '../NewExpense/ExpenseFilter';
 
-const ExpenseCalls = (props) => {
+const ExpensesCalls = (props) => {
 	const [year, setYear] = useState('');
 	function expenseFilterHandler(yearChosen) {
 		setYear(yearChosen);
@@ -17,6 +17,13 @@ const ExpenseCalls = (props) => {
 					onSaveFilter={expenseFilterHandler}
 					selectedYear={year}
 				/>
+
+				{/* this code is equal to all the code below and this the correct way */}
+				{props.expenses.map((item) => (
+					<Expense title={item.title} price={item.amount} date={item.date} />
+				))}
+
+				{/* 				
 				<Expense
 					title={props.expenses[0].title}
 					price={props.expenses[0].amount}
@@ -32,10 +39,10 @@ const ExpenseCalls = (props) => {
 				<Expense
 					title={props.expenses[3].title}
 					price={props.expenses[3].amount}
-					date={props.expenses[3].date}></Expense>
+					date={props.expenses[3].date}></Expense> */}
 			</Card>
 		</div>
 	);
 };
 
-export default ExpenseCalls;
+export default ExpensesCalls;

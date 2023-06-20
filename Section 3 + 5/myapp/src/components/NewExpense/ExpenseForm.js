@@ -67,7 +67,7 @@ function ExpenseForm(props) {
 		//save the inputed data in an object and log it
 		const enteredData = {
 			title: enteredTitle,
-			cost: enteredAmount,
+			amount: enteredAmount,
 			date: new Date(enteredDate),
 		};
 
